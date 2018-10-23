@@ -6,10 +6,22 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		
 	end
+
+
+	def forma
+		@forum_thread = ForumThread.new
+		@forum_thread.forum_posts.new
+	end
+
 	def new
 		@post = Post.new
 	end
-
+	def test
+		
+	end
+	def formbx
+		
+	end
 
 	def create
 		#render plain: params[:post].inspect

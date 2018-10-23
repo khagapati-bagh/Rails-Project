@@ -4,17 +4,309 @@
     <title>Testing</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %>
+    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <style type="text/css">
+  <!-- <style type="text/css">
   	ul li{
   		margin-right: 15px;
   	}
+  </style> -->
+  <style type="text/css">
+    body{
+  margin:0;
+  padding: 0;
+  font-family: century gothic;  
+}
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 100px;
+  background: #262626;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.head_logo
+{
+  font-size:1.6em; 
+  font-style: Serif;  
+  width: 100%;
+  
+  margin-bottom: 20px; 
+  font-family: "Times New Roman" ,Times, serif; 
+  font-weight: bold;
+  text-align: center;
+  background: #F0F0F0;
+}
+.head_logo1
+{
+  font-size:1.6em; 
+  font-style: Serif;  
+  width: 100%;
+  
+  margin-bottom: 20px; 
+  font-family: "Times New Roman" ,Times, serif; 
+  font-weight: bold;
+  text-align: center;
+  background: #ffff;
+}
+header .logo{
+  color: #fff;
+  height: 50px;
+  line-height: 50px;
+  font-size: 24px;
+  /* float: left; */
+  font-weight: bold;
+  text-align: center;
+}
+
+header nav
+{
+  float: right;
+}
+header nav ul{
+  margin:0;
+  padding: 0px;
+  display: flex;
+  font-size: 16px;
+}
+header nav ul li
+{
+  list-style: none;
+  position: relative;
+}
+
+header nav ul li.sub-menu:before
+{
+  content: '\f0d7';
+  font-family: fontAwesome;
+  position: absolute;
+  line-height: 50px;
+  color: #fff;
+  right: 5px;
+}
+header nav ul li.active.sub-menu:before
+{
+  content: '\f0d8';
+}
+
+header nav ul li ul
+{
+  position: absolute;
+  left: 0;
+  background:#333;
+  display: none;
+}
+header nav ul li.active ul
+{
+  display: block;
+}
+
+header nav ul li ul li{
+  display: block;
+  width: 200px;
+}
+
+/*Sub sub menu*/
+
+header nav ul ul li:hover ul{
+  display: block;
+  margin-left: 205px;
+  top: 0;
+  position: absolute;
+  background: #333;
+}
+header nav ul li ul li ul{
+  position: relative;
+  display: none;
+  background:#333;
+}
+
+header nav ul li ul li:hover ul
+{
+  display: block; 
+}
+
+header nav ul li ul li ul li{
+  display: block;
+  width: 200px;
+}
+/*end of sub-sub-menu*/
+
+
+header nav ul li a{
+  height: 50px;
+  line-height: 50px;
+  padding: 0 20px;
+  color: #fff;
+  display: block;
+}
+header nav ul li a:hover,
+header nav ul li a.active{
+  color: #fff;
+  display: block;
+  background: #2196f3;
+}
+.menu-toggle{
+  color: #fff;
+  float: right;
+  line-height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  display: none;  
+}
+
+ .search
+{
+  top: 20px;
+  position: relative;
+  right: 0px;
+  background: transparent;
+  
+}
+
+
+.image-slider
+{
+  position: relative;
+  width: 100%;
+  height: 30%;
+}
+
+.dept-div
+{
+  vertical-align: middle;
+}
+
+.logo_img
+{
+  width:100px; 
+  height: 100px;
+}
+
+.content p
+{
+  font-size: 15px;
+  background: #ffff;
+}
+/*
+FOOTER------------
+
+*/
+  .footer{
+  bottom: 0;
+  background: #F0F0F0;
+  color: #000;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+    font-size: 18px;
+}
+.footer ul
+{
+      list-style-type: disc;
+}
+.footer ul li
+{
+  list-style: none;
+  display: inline;
+  /*padding: 0 10px;*/
+  align-self: center;
+  margin-left: 10px;
+}
+.links ul li{
+  border-left: 2px solid;
+}
+.links ul li a{
+  margin-left: 5px;
+}
+.footer a:hover
+{
+  
+  color: #000;
+}
+
+
+@media (max-width: 1000px)
+{
+  header{
+    padding: 0 20px;
+
+  }
+  .menu-toggle
+  {
+    display: block;
+  }
+  header nav{
+    
+    position: absolute;
+    width: 100%;
+    height: calc(100vh-50px);
+    background: #333;
+    top: 100%;
+    left: -100%;
+    transition: 1s;
+  }
+  header nav.active
+  {
+    left: 0;
+  }
+  header nav ul
+  {
+    display: block;
+    text-align: center;
+  }
+  header nav ul li a{
+    border-bottom: 1px solid rgba(0,0,0,2);
+  }
+
+  header nav ul li.active ul
+  {
+    position: relative;
+    background:#003e6f;
+
+  }
+    header nav ul li ul li
+  {
+    width: 100%;
+  }
+   .search
+  {
+    
+    position: relative;
+    margin-bottom: 8%;
+    width: 95%;
+    
+
+  }
+  
+  .hide_image
+  {
+    display: none;
+  }
+  .logo
+  {
+    font-size:85%; 
+    font-style: Serif;  
+    text-align: center;
+    font-family: "Times New Roman" ,Times, serif; 
+    font-weight: bold;
+  }
+  .logo_img
+  {
+    width:60px; 
+    height: 60px;
+  }
+}
   </style>
 
   <body>
-  	 <header>
+  	<!--  <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="#">Simple Blog</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,11 +331,96 @@
           </form>
         </div>
       </nav>
-    </header>
+    </header> -->
 
 
-    <div class="container" style="margin-top: 5%;">
-    	<%= yield %>
+<!-- header part-->
+  <div class="container-fluid head_logo"  style="">
+    <div class="row" >
+      <div class="col-md-2 col-sm-2 col-xs-12" style="text-align: center;">
+        <img src="assets/nitk1.png" alt="Los Angeles" class="logo_img" style="">
+      </div>
+
+      <div class="col-md-8  col-sm-8 col-xs-12 logo">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12 logo">
+            NATIONAL INSTITUTE OF TECHNOLOGY KARNATAKA,SURATHKAL
+          </div>
+          <div class="col-md-12 col-sm-12  col-xs-12 logo">
+            DEPARTMENT OF MATHEMATICAL AND COMPUTATIONAL SCIENCE
+          </div>
+          <div class="col-md-12 col-sm-12  col-xs-12 logo">
+            
+          </div>
+          
+        </div>
+
+      </div>
+      <div class="col-md-2" >
+        <div  id="search" class="input-group search">
+          <input type="text" class="form-control" placeholder="Search">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit">
+                  <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>  
+
+    <div class="row">
+      <div class="col-md-12">
+      <header style="z-index: 1000">
+        <!-- <div class="logo">logo</div> -->
+        <nav>
+          <ul>
+            <li><%= link_to "Home", home_path %></li>
+            <li class="sub-menu"><a href="#">Registration</a>
+              <ul>
+                <li><%= link_to "Form A", test_path %></li>
+                <li><%= link_to "Form B",formb_path %></li>
+              </ul>
+            </li>
+            <li><a href="#">Info.</a></li>
+            <li><a href="newlogin.html">Login</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <div class="menu-toggle"><i class="fa fa-bars"></i></div>
+      </header>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function(){
+          $('.menu-toggle').click(function(){
+            $('nav').toggleClass('active')
+          })
+          $('ul li').click(function(){
+            $(this).siblings().removeClass('active');
+            $(this).toggleClass('active');
+          })
+        })
+      </script>
     </div>
+  
+    
+    <div class="row" style=" position: relative;">
+      <div class="col-md-12"  style="margin-top: 25px; "></div>
+    </div>
+  </div>
+<!-- header end-->
+
+    	<%= yield %>
+
+    <!-- footer-->
+
+  <div class="footer">
+    <img src="copyright.png" height="18px" width="18px"> 2018 NIT Karnataka. All rights reserved
+  </div>
+<!--footer end-->
   </body>
 </html>
